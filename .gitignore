@@ -1,5 +1,8 @@
 .gradle
 /build/
+/target/
+/out/
+/production/
 !gradle/wrapper/gradle-wrapper.jar
 
 ### STS ###
