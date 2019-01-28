@@ -7,9 +7,8 @@ public class Square implements Shape{
     private double height;
     private double width;
 
-    public Square(double height, double width) {
+    public Square(double height) {
         this.height = height;
-        this.width = width;
     }
 
 
@@ -20,7 +19,7 @@ public class Square implements Shape{
 
     @Override
     public double getFiled() {
-        return height*width;
+        return height*height;
     }
 
     @Override
@@ -36,4 +35,13 @@ public class Square implements Shape{
     public int hashCode() {
         return Objects.hash(height, width);
     }
+
+    @Override
+    public String toString() {
+        return getShapeName() + ". The field is equal " + getFiled();
+    }
+
+
+
+
 }

@@ -35,4 +35,12 @@ public class Triangle implements Shape{
     public int hashCode() {
         return Objects.hash(height, width);
     }
+
+
+    @Override
+    public String toString() {
+        return getShapeName() + ". The field is equal " + getFiled();
+    }
+
+
 }

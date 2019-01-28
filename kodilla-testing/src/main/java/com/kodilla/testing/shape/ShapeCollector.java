@@ -1,17 +1,18 @@
 package com.kodilla.testing.shape;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Objects;
 
-public class ShapeCollector {
+ class ShapeCollector  {
 
-    ArrayList<Shape> myShapes = new ArrayList<>();
+    private ArrayList<Shape> myShapes = new ArrayList<>();
 
     public void addFigure(Shape shape){
         myShapes.add(shape);
     }
 
-    public boolean removeFigure(Shape shape){
+     public boolean removeFigure(Shape shape){
         if (myShapes.contains(shape)) {
             return myShapes.remove(shape);
         }else{
@@ -19,7 +20,7 @@ public class ShapeCollector {
         }
     }
 
-    public Shape getFigure(int n){
+     public Shape getFigure(int n){
         if (n>=0 && myShapes.size()>n) {
             return myShapes.get(n);
         }else {
@@ -34,7 +35,7 @@ public class ShapeCollector {
         }
     }
 
-    public ArrayList<Shape> showFigures(){
+     ArrayList<Shape> showFigures(){
         return myShapes;
     }
 
@@ -50,4 +51,11 @@ public class ShapeCollector {
     public int hashCode() {
         return Objects.hash(myShapes);
     }
-}
+
+     @Override
+     public String toString() {
+         return "ShapeCollector{" +
+                 "myShapes=" + myShapes +
+                 '}';
+     }
+ }
