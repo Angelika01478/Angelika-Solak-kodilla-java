@@ -2,8 +2,9 @@ package com.kodilla.testing.forum;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Objects;
 
-public class ForumUser {
+public class ForumUser implements Comparable<ForumUser>{
 
     private String name;
     private String realName;
@@ -80,6 +81,32 @@ public class ForumUser {
         return realName;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ForumUser forumUser = (ForumUser) o;
+        return Objects.equals(name, forumUser.name) &&
+                Objects.equals(realName, forumUser.realName) &&
+                Objects.equals(posts, forumUser.posts) &&
+                Objects.equals(comments, forumUser.comments);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, realName);
+    }
 
+    @Override
+    public String toString() {
+        return "ForumUser{" +
+                "name='" + name + '\'' +
+                ", realName='" + realName + '\'' +
+                '}';
+    }
+
+    @Override
+    public int compareTo(ForumUser o) {
+       return this.name.compareTo(o.name);
+    }
 }
