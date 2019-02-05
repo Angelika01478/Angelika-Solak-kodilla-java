@@ -4,6 +4,7 @@ import stream.beautifier.PoemBeautifier;
 import stream.beautifier.*;
 import stream.iterator.NumbersGenerator;
 import stream.lambda.*;
+import stream.person.People;
 import stream.reference.FunctionalCalculator;
 
 public class StreamMain {
@@ -49,6 +50,11 @@ public class StreamMain {
 
         System.out.println("Using Stream to generate even numbers from 1 to 20");
         NumbersGenerator.generateEven(20);
+
+        People.getList().stream()
+                .map(str->str.toUpperCase())
+                .forEach(str-> System.out.println(str));
+
 
     }
 
