@@ -1,6 +1,6 @@
 package stream.immutable;
 
-public final class ForumUser {
+public class ForumUser {
 
     private String userName;
     private String realName;
