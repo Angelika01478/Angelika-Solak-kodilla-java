@@ -2,6 +2,7 @@ package stream;
 
 import stream.beautifier.PoemBeautifier;
 import stream.beautifier.*;
+import stream.iterator.NumbersGenerator;
 import stream.lambda.*;
 import stream.reference.FunctionalCalculator;
 
@@ -44,11 +45,13 @@ public class StreamMain {
                 }
             }
             return newStr;
-                }
+                });
 
-
-                );
+        System.out.println("Using Stream to generate even numbers from 1 to 20");
+        NumbersGenerator.generateEven(20);
 
     }
+
+
 
 }
