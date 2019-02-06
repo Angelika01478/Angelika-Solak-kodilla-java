@@ -1,63 +1,28 @@
 package stream;
 
-import stream.beautifier.PoemBeautifier;
-import stream.beautifier.*;
-import stream.iterator.NumbersGenerator;
-import stream.lambda.*;
-import stream.person.People;
-import stream.reference.FunctionalCalculator;
+import stream.book.BookDirectory;
+import stream.forumUser.Forum;
+import stream.forumUser.ForumUser;
+
+import java.time.LocalDate;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class StreamMain {
     public static void main(String[] args) {
 
-        System.out.println("Calculating expressions with lambdas");
-        ExpressionExecutor expressionExecutor = new ExpressionExecutor();
-        expressionExecutor.executeExpression(10, 5, (a, b) -> a + b);
-        expressionExecutor.executeExpression(10, 5, (a, b) -> b - a);
-        expressionExecutor.executeExpression(10, 5, (a, b) -> a * b);
-        expressionExecutor.executeExpression(10, 5, (a, b) -> a / b);
+        Forum forum = new Forum();
+        Map<Integer, ForumUser> theSpecialForumUsers = forum.getUserList().stream()
+                .filter(forumUser->forumUser.getSex()=='M')
+                .filter(forumUser -> LocalDate.now().getYear() -  forumUser.getDateOfBirth().getYear() > 19)
+                .filter(forumUser -> forumUser.getNumberOfPushedPosts()>0)
+                .collect(Collectors.toMap(ForumUser::getID, forumUser -> forumUser));
 
-
-        System.out.println("Calculating expressions with method reference");
-        expressionExecutor.executeExpression(10, 5, FunctionalCalculator::addAToB);
-        expressionExecutor.executeExpression(10, 5, FunctionalCalculator::subtractBfromA);
-        expressionExecutor.executeExpression(10, 5, FunctionalCalculator::multiplyAByB);
-        expressionExecutor.executeExpression(10, 5, FunctionalCalculator::devidesAByB);
-
-
-        System.out.println("Some excercises with poem beautify");
-        PoemBeautifier poemBeautifier = new PoemBeautifier();
-        poemBeautifier.beautify("something", str -> "ABC" + str + "ABC");
-        poemBeautifier.beautify("something", str -> str.toUpperCase());
-        poemBeautifier.beautify("something", str -> {
-            String newStr = "";
-            for (int i = str.length(); i >= 1; i--) {
-                newStr = newStr.concat(str.substring(i - 1, i));
-            }
-            return newStr;
-        });
-        poemBeautifier.beautify("something", str -> {
-            String newStr = "";
-            for(int i=0; i<str.length();i++){
-                if(i%2==0){
-                    newStr=newStr.concat(str.substring(i,i+1).toUpperCase());
-                }else{
-                    newStr=newStr.concat(str.substring(i,i+1).toLowerCase());
-                }
-            }
-            return newStr;
-                });
-
-        System.out.println("Using Stream to generate even numbers from 1 to 20");
-        NumbersGenerator.generateEven(20);
-
-        People.getList().stream()
-                .map(str->str.toUpperCase())
-                .forEach(str-> System.out.println(str));
+     theSpecialForumUsers.entrySet().stream()
+                            .map(entry-> entry.getKey() + " : " + entry.getValue().toString())
+                            .forEach(System.out::println);
 
 
     }
-
-
-
 }
