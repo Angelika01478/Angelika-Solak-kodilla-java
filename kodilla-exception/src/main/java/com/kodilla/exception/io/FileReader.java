@@ -16,12 +16,10 @@ public class FileReader {
         Path path = Paths.get(file.getPath()); //za pomocą klasy Paths modyfikujemy ścieżkę typu String na obiekt Path
 
 
-        try {
-
-           Stream<String> fileLines= Files.lines(path);
+        try (Stream<String> fileLines= Files.lines(path)) {
            fileLines.forEach(System.out::println);
         }catch (IOException e){
-            System.out.println("ops, something went wrong");
+            System.out.println("ops, something went wrong" + e);
         }
 
     }

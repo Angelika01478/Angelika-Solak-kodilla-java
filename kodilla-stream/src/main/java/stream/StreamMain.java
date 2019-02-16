@@ -1,12 +1,14 @@
 package stream;
 
+import stream.Forum.ForumUser;
 import stream.book.BookDirectory;
 import stream.forumUser.Forum;
-import stream.forumUser.ForumUser;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -14,15 +16,6 @@ public class StreamMain {
     public static void main(String[] args) {
 
         Forum forum = new Forum();
-        Map<Integer, ForumUser> theSpecialForumUsers = forum.getUserList().stream()
-                .filter(forumUser->forumUser.getSex()=='M')
-                .filter(forumUser -> Period.between(forumUser.getDateOfBirth(), LocalDate.now()).getYears()>19 )
-                .filter(forumUser -> forumUser.getNumberOfPushedPosts()>0)
-                .collect(Collectors.toMap(ForumUser::getID, forumUser -> forumUser));
-
-     theSpecialForumUsers.entrySet().stream()
-                            .map(entry-> entry.getKey() + " : " + entry.getValue().toString())
-                            .forEach(System.out::println);
 
 
 
