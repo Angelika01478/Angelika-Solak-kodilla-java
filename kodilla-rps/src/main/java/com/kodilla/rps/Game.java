@@ -1,6 +1,5 @@
 package com.kodilla.rps;
 
-import javax.swing.plaf.PanelUI;
 import java.util.List;
 import java.util.Scanner;
 

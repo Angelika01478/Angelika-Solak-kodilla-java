@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
-import org.mockito.internal.configuration.injection.MockInjection;
 
 import java.util.ArrayList;
 import java.util.List;

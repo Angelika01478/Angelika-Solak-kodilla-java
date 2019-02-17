@@ -1,7 +1,6 @@
 package com.kodilla.testing.shape;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Objects;
 
  class ShapeCollector  {

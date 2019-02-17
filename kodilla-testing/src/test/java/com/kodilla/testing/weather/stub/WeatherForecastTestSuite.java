@@ -3,8 +3,6 @@ package com.kodilla.testing.weather.stub;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.HashMap;
-
 public class WeatherForecastTestSuite {
 
     @Test

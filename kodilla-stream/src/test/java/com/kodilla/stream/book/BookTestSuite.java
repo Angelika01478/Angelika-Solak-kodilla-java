@@ -5,7 +5,6 @@ import org.junit.Test;
 import stream.book.Book;
 import stream.book.BookDirectory;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 

@@ -2,7 +2,6 @@ package com.kodilla.testing.shape;
 import org.junit.*;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class ShapeCollectorTestSuite{
 

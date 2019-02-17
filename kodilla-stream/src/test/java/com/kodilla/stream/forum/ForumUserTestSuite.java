@@ -4,9 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import stream.Forum.ForumUser;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class ForumUserTestSuite {
 
     @Test

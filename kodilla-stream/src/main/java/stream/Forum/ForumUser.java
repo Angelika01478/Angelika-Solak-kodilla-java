@@ -1,8 +1,5 @@
 package stream.Forum;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-import stream.forumUser.Forum;
-
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
