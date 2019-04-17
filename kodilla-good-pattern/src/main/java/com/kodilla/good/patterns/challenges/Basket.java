@@ -16,7 +16,7 @@ public class Basket {
             System.out.println("\n"+basketPosition.getProduct().toString() + "\nadded to basket, quantity: " + basketPosition.getQuantity());
             return true;
         }
-        System.out.println(basketPosition.getProduct().toString() + "\nwas not add to basket, try again!");
+        System.out.println(basketPosition.getProduct().toString() + "\nwas not add to basket, try again!!!");
         return false;
     }
 
