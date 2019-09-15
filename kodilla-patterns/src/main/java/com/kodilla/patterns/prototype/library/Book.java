@@ -2,7 +2,7 @@ package com.kodilla.patterns.prototype.library;
 
 import java.time.LocalDateTime;
 
-public final class Book {
+public final  class Book {
 
     final String title;
     final String author;
