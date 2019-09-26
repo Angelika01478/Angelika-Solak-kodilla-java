@@ -7,6 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+@NamedQuery(
+        name="Employee.searchByLastName",
+        query = "FROM Employee WHERE LASTNAME = :LASTNAME"
+)
+
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
@@ -68,4 +73,6 @@ public class Employee {
     public void setCompanies(List<Company> companies) {
         this.companies = companies;
     }
+
+
 }
